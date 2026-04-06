@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-apple-gray-50: #f5f5f7;
+  --color-apple-gray-100: #e8e8ed;
+  --color-apple-blue: #0071e3;
+  
+  --radius-apple: 18px;
+
+  --animate-breathing: breathing 8s ease-in-out infinite;
+  --animate-float: float 12s ease-in-out infinite;
+
+  @keyframes breathing {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(10px, -20px); }
+    66% { transform: translate(-15px, 10px); }
+  }
+}
+
+@utility bg-zen-sand {
+  @apply bg-[#f5ebe0]/30;
+}
+
+@utility bg-zen-sage {
+  @apply bg-[#ccd5ae]/30;
+}
+
+@utility bg-zen-rose {
+  @apply bg-[#faedcd]/30;
+}
+
+@utility bg-zen-dusk {
+  @apply bg-[#e9edc6]/30;
+}
+
+@layer base {
+  body {
+    @apply bg-[#fcfaf7] text-[#5c4d3c] antialiased selection:bg-[#d4a373]/20;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+@utility glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20;
+}
+
+@utility glass-warm {
+  @apply bg-[#fcfaf7]/70 backdrop-blur-xl border border-[#f5ebe0]/30;
+}
+
+@utility apple-shadow {
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04), 0 2px 8px -1px rgba(0, 0, 0, 0.02);
+}
+
+@utility apple-card {
+  @apply glass apple-shadow rounded-[22px] transition-all duration-500;
+}
+
+@utility apple-card-warm {
+  @apply glass-warm apple-shadow rounded-[22px] transition-all duration-500;
+}
+
+@utility hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
